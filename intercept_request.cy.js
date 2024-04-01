@@ -9,6 +9,14 @@ beforeEach(() =>{
         .visit('/')
 });
 
+it('Reset Test', () => {
+    cy.request('POST', '/api/reset')
+
+    cy 
+        .visit('/')
+
+    })
+
 it('Create first Board',() => {
         cy.intercept({
             method: 'POST',
@@ -70,14 +78,9 @@ it('Create new Board',() => {
 
 })
 
-it('Reset Test', () => {
-    cy
-        .intercept({
-            method: 'POST',
-            url: '/api/reset'
-        })
+
 
 // cy
 //     .get('.Nav_boards')
 //     .click()
-})
+
